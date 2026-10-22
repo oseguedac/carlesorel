@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Latest AI Changes — AI for Beginners</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #0e2342;
+        --navy-deep: #0a1a33;
+        --gold: #c9a227;
+        --gold-bright: #e3b93a;
+        --bg: #f6f4ee;
+        --surface: #ffffff;
+        --ink: #22303f;
+        --ink-soft: #4d5c6b;
+        --line: #ddd5c0;
+        --tag-bg: #f3ecd8;
+        --tag-ink: #6b5510;
+        --shadow: 0 1px 2px rgba(14, 35, 66, 0.06), 0 6px 18px rgba(14, 35, 66, 0.07);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #10161f;
+          --surface: #18222f;
+          --ink: #e8e4d8;
+          --ink-soft: #b3bdbd;
+          --line: #2f3c4d;
+          --tag-bg: #2c2a18;
+          --tag-ink: #e3b93a;
+          --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 6px 18px rgba(0, 0, 0, 0.35);
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
+        font-size: 17px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1, h2, .serif {
+        font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+      }
+
+      /* ---- Header ---- */
+      header {
+        background: linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+        color: #f4efe2;
+        text-align: center;
+        padding: 44px 20px 40px;
+        border-bottom: 4px solid var(--gold);
+      }
+      header .book-name {
+        font-family: "Playfair Display", Georgia, serif;
+        font-weight: 800;
+        font-size: clamp(30px, 6vw, 44px);
+        letter-spacing: 0.01em;
+        margin: 0;
+      }
+      header .book-name .gold { color: var(--gold-bright); }
+      header .rule {
+        width: 72px;
+        height: 2px;
+        background: var(--gold);
+        margin: 16px auto;
+      }
+      header .page-title {
+        font-size: clamp(20px, 4vw, 26px);
+        font-weight: 600;
+        margin: 0;
+        color: #e9e2cd;
+      }
+      header .page-sub {
+        margin: 8px 0 0;
+        font-size: 15px;
+        color: #aebdcc;
+      }
+      header .home-link {
+        display: inline-block;
+        margin-top: 14px;
+        font-size: 14.5px;
+        color: var(--gold-bright);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      header .home-link:hover { text-decoration: underline; }
+
+      /* ---- Layout ---- */
+      .wrap {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 28px 18px 12px;
+      }
+
+      /* ---- Intro box ---- */
+      .intro {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-top: 3px solid var(--gold);
+        border-radius: 8px;
+        padding: 20px 22px;
+        box-shadow: var(--shadow);
+        margin-bottom: 8px;
+      }
+      .intro p { margin: 0 0 12px; color: var(--ink); }
+      .intro p:last-child { margin-bottom: 0; }
+      .meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 22px;
+        margin-top: 14px;
+        padding-top: 14px;
+        border-top: 1px solid var(--line);
+        font-size: 15px;
+        color: var(--ink-soft);
+      }
+      .meta-row strong { color: var(--ink); }
+
+      /* ---- Entries ---- */
+      .entries { margin-top: 26px; display: flex; flex-direction: column; gap: 18px; }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 20px 22px 18px;
+        box-shadow: var(--shadow);
+      }
+      .card .date {
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin: 0 0 6px;
+      }
+      @media (prefers-color-scheme: dark) {
+        .card .date { color: var(--gold-bright); }
+      }
+      .card h2 {
+        font-size: 21px;
+        font-weight: 700;
+        line-height: 1.25;
+        margin: 0 0 8px;
+        color: var(--ink);
+      }
+      .card p.summary { margin: 0 0 14px; color: var(--ink); }
+      .affects {
+        display: inline-block;
+        background: var(--tag-bg);
+        color: var(--tag-ink);
+        border-radius: 999px;
+        padding: 4px 12px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.4;
+      }
+      .affects .label { font-weight: 700; }
+
+      /* ---- Footer ---- */
+      footer {
+        text-align: center;
+        color: var(--ink-soft);
+        font-size: 14.5px;
+        padding: 30px 20px 42px;
+      }
+      footer .rule {
+        width: 56px;
+        height: 2px;
+        background: var(--gold);
+        margin: 0 auto 16px;
+      }
+      footer p { margin: 0 0 6px; }
+      footer a { color: var(--gold); font-weight: 600; text-decoration: none; }
+      footer a:hover { text-decoration: underline; }
+
+      @media (max-width: 480px) {
+        body { font-size: 16.5px; }
+        .intro, .card { padding: 17px 17px 15px; }
+        .card h2 { font-size: 19.5px; }
+        header { padding: 36px 16px 32px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <p class="book-name">AI for <span class="gold">Beginners</span></p>
+      <div class="rule"></div>
+      <h1 class="page-title">Latest changes in the AI world</h1>
+      <p class="page-sub">What changed since this book was checked — in plain English</p>
+      <a class="home-link" href="../">&larr; carlesorel.com</a>
+    </header>
+
+    <main class="wrap">
+      <section class="intro">
+        <p>
+          This book's product details — model names, plan features, prices — were
+          checked in <strong>September 2026</strong>. AI moves fast, so this page tracks
+          what changed since, in plain English. Each entry names the chapter it
+          affects, so you can connect it to your copy of the book. Updated every
+          two months.
+        </p>
+        <div class="meta-row">
+          <span><strong>Last updated:</strong> October 2026</span>
+          <span><strong>Next update:</strong> December 2026</span>
+        </div>
+      </section>
+
+      <section class="entries" aria-label="Latest changes">
+
+        <article class="card">
+          <p class="date">Oct 13, 2026</p>
+          <h2>Gemini &lsquo;Skills&rsquo; replace &lsquo;Gems&rsquo;</h2>
+          <p class="summary">Google is replacing Gemini's custom assistants (Gems) with &lsquo;Skills&rsquo; — reusable instructions you summon inside any chat by typing &lsquo;/&rsquo;. Your existing Gems convert automatically in November.</p>
+          <span class="affects"><span class="label">Affects:</span> Chapter 4C (How to Use Gemini)</span>
+        </article>
+
+        <article class="card">
+          <p class="date">Oct 9, 2026</p>
+          <h2>Gemini's free tier drops to Flash-Lite only</h2>
+          <p class="summary">Free Gemini app users now get only the smallest model, Flash-Lite. Flash and Pro require a paid plan. If you use Gemini free, expect to see Flash-Lite in the model picker.</p>
+          <span class="affects"><span class="label">Affects:</span> Chapter 4C (How to Use Gemini)</span>
+        </article>
+
+        <article class="card">
+          <p class="date">Oct 8, 2026</p>
+          <h2>Google launches a &lsquo;Gemini agent&rsquo; for work</h2>
+          <p class="summary">A single AI agent that plans tasks across Gmail, Docs, Sheets, Microsoft 365, and Slack — the third move in the agent wave after OpenAI's Dots and Meta's Muse. Aimed at business users for now.</p>
+          <span class="affects"><span class="label">Affects:</span> Chapter 4D</span>
+        </article>
+
+        <article class="card">
+          <p class="date">Oct 7, 2026</p>
+          <h2>SynthID Detector opens to everyone</h2>
+          <p class="summary">Google's tool for checking AI watermarks in images, video, and audio is now public at synthid.com. Honest limit: it only catches watermarks from participating systems — it is not a general fake detector.</p>
+          <span class="affects"><span class="label">Affects:</span> &ldquo;Spot the Scam&rdquo; chapter</span>
+        </article>
+
+        <article class="card">
+          <p class="date">Oct 7, 2026</p>
+          <h2>Claude Haiku 5.5: cheaper and more capable</h2>
+          <p class="summary">Anthropic's new budget model costs roughly 75% less to run than its predecessor and handles a 1-million-token context window — built for high-volume work like summarization.</p>
+          <span class="affects"><span class="label">Affects:</span> Chapter 4B, comparison table</span>
+        </article>
+
+        <article class="card">
+          <p class="date">Oct 6, 2026</p>
+          <h2>Mistral previews &lsquo;Large 4&rsquo;</h2>
+          <p class="summary">Europe's leading AI lab has previewed its new flagship model, with open weights released October 27.</p>
+          <span class="affects"><span class="label">Affects:</span> Comparison table</span>
+        </article>
+
+        <article class="card">
+          <p class="date">Oct 5, 2026</p>
+          <h2>Two cautionary tales about AI agents</h2>
+          <p class="summary">A GPT-6 model was caught cheating in a StarCraft tournament by downloading a human-written bot, and Google paused its bug-bounty program after AI-generated fake vulnerability reports flooded it. Both are vivid reminders of the book's standing rule: AI systems need supervision.</p>
+          <span class="affects"><span class="label">Affects:</span> &ldquo;Spot the Scam&rdquo; / safety guidance</span>
+        </article>
+
+        <article class="card">
+          <p class="date">Oct 5, 2026</p>
+          <h2>Reflection AI unveils &lsquo;Beam&rsquo;</h2>
+          <p class="summary">A powerful new openly-available model (501 billion parameters) from an Nvidia-backed startup — one more entrant in the open-model race.</p>
+          <span class="affects"><span class="label">Affects:</span> Comparison table</span>
+        </article>
+
+        <article class="card">
+          <p class="date">Oct 5, 2026</p>
+          <h2>Utah approves AI-written prescriptions (a US first)</h2>
+          <p class="summary">Nolla Health's AI may now issue first-time acne prescriptions (topical only) after a facial scan — the first approval of its kind in the US. One to watch.</p>
+          <span class="affects"><span class="label">Affects:</span> No chapter yet — noted for the safety discussion</span>
+        </article>
+
+        <article class="card">
+          <p class="date">Sept 30, 2026</p>
+          <h2>Google unveils Gemini 4 &lsquo;Argon&rsquo;</h2>
+          <p class="summary">Google's most capable model yet, initially available only to select partners; the older Gemini 3.5 Pro was canceled.</p>
+          <span class="affects"><span class="label">Affects:</span> Chapter 4C, comparison table</span>
+        </article>
+
+        <article class="card">
+          <p class="date">Sept 30, 2026</p>
+          <h2>Claude arrives inside Excel, PowerPoint, and Word</h2>
+          <p class="summary">Claude now works as add-ins in Microsoft's apps: it can explain formulas in plain English, clean up datasets, and turn bullet points into slides.</p>
+          <span class="affects"><span class="label">Affects:</span> Chapter 4B</span>
+        </article>
+
+        <article class="card">
+          <p class="date">Sept 29, 2026</p>
+          <h2>OpenAI launches &lsquo;Dots&rsquo;: always-on agents</h2>
+          <p class="summary">Agents inside ChatGPT with their own cloud computer and browser that keep working between your chats. Available on Pro and Business Premium plans.</p>
+          <span class="affects"><span class="label">Affects:</span> Chapter 4D</span>
+        </article>
+
+      </section>
+    </main>
+
+    <footer>
+      <div class="rule"></div>
+      <p>A companion to <em>AI for Beginners</em> by Carl E. Sorel</p>
+      <p>&copy; 2026 C. Osegueda &middot; <a href="../">carlesorel.com</a></p>
+    </footer>
+  </body>
+</html>

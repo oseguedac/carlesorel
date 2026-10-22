@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Carl E. Sorel — Author</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #0e2342;
+        --navy-deep: #0a1a33;
+        --gold: #c9a227;
+        --gold-bright: #e3b93a;
+        --bg: #f6f4ee;
+        --surface: #ffffff;
+        --ink: #22303f;
+        --ink-soft: #4d5c6b;
+        --line: #ddd5c0;
+        --shadow: 0 1px 2px rgba(14, 35, 66, 0.06), 0 6px 18px rgba(14, 35, 66, 0.07);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #10161f;
+          --surface: #18222f;
+          --ink: #e8e4d8;
+          --ink-soft: #b3bdbd;
+          --line: #2f3c4d;
+          --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 6px 18px rgba(0, 0, 0, 0.35);
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
+        font-size: 17px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      header {
+        background: linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+        color: #f4efe2;
+        text-align: center;
+        padding: 56px 20px 48px;
+        border-bottom: 4px solid var(--gold);
+      }
+      header h1 {
+        font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+        font-weight: 800;
+        font-size: clamp(34px, 7vw, 52px);
+        margin: 0;
+        letter-spacing: 0.01em;
+      }
+      header h1 .gold { color: var(--gold-bright); }
+      header .rule {
+        width: 72px;
+        height: 2px;
+        background: var(--gold);
+        margin: 18px auto;
+      }
+      header p.sub {
+        margin: 0;
+        font-size: 18px;
+        color: #aebdcc;
+      }
+      .wrap {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 30px 18px 12px;
+      }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-top: 3px solid var(--gold);
+        border-radius: 8px;
+        padding: 24px 24px;
+        box-shadow: var(--shadow);
+        margin-bottom: 18px;
+      }
+      .card h2 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 22px;
+        margin: 0 0 10px;
+      }
+      .card p { margin: 0 0 14px; }
+      .card p:last-child { margin-bottom: 0; }
+      .btn {
+        display: inline-block;
+        background: var(--navy);
+        color: #f4efe2;
+        text-decoration: none;
+        font-weight: 700;
+        padding: 12px 22px;
+        border-radius: 6px;
+        border-bottom: 3px solid var(--gold);
+      }
+      .btn.gold-btn {
+        background: var(--gold);
+        color: #1d1a08;
+        border-bottom-color: #9a7a1c;
+      }
+      .btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+      footer {
+        text-align: center;
+        color: var(--ink-soft);
+        font-size: 14.5px;
+        padding: 28px 20px 42px;
+      }
+      footer .rule {
+        width: 56px;
+        height: 2px;
+        background: var(--gold);
+        margin: 0 auto 16px;
+      }
+      footer p { margin: 0; }
+      @media (max-width: 480px) {
+        body { font-size: 16.5px; }
+        .card { padding: 19px 18px; }
+        header { padding: 44px 16px 38px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Carl E. <span class="gold">Sorel</span></h1>
+      <div class="rule"></div>
+      <p class="sub">Author of <em>AI for Beginners</em> — plain-English guides to artificial intelligence</p>
+    </header>
+
+    <main class="wrap">
+      <section class="card">
+        <h2>Latest changes in the AI world</h2>
+        <p>
+          AI moves fast. This page tracks what changed since <em>AI for Beginners</em>
+          was checked — model launches, plan changes, and price moves, in plain
+          English, with the chapter each one affects. Updated every two months.
+        </p>
+        <div class="btn-row">
+          <a class="btn" href="updates/">Read the latest changes</a>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>The Starter Prompt Pack</h2>
+        <p>
+          90 ready-to-use AI prompts in English and Spanish, across 18 everyday
+          categories — the companion to <em>AI for Beginners</em>, Chapter 11.
+          Instant download, PDF + EPUB.
+        </p>
+        <div class="btn-row">
+          <a class="btn gold-btn" href="https://osegueda7.gumroad.com/l/wnqtj">Get the pack — $7</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="rule"></div>
+      <p>&copy; 2026 C. Osegueda</p>
+    </footer>
+  </body>
+</html>
